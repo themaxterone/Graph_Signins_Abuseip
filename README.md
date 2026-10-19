@@ -4,7 +4,16 @@ A security investigation tool designed for SOC analysts and incident responders 
 
 ---
 
-## 1. Features
+## Table of Contents
+
+1. [Features](#features)
+2. [How It Works](#how-it-works)
+3. [Prerequisites & Dependencies](#prerequisites--dependencies)
+4. [Installation Guide](#installation-guide)
+5. [Usage & Execution](#usage--execution)
+6. [Execution Workflow & Outputs](#execution-workflow--outputs)
+
+## Features
 
 - **No Custom Azure App Registration Needed**: Uses the official Microsoft Azure CLI public Client ID (`04b07795-8ddb-461a-bbee-02f9e1bf7b46`) with browser-based interactive PKCE authentication.
 - **Account Selection Prompt**: Forces the Microsoft account picker (`prompt="select_account"`) to easily select or switch administrative/analyst credentials.
@@ -23,7 +32,7 @@ A security investigation tool designed for SOC analysts and incident responders 
 
 ---
 
-## 2. How It Works
+## How It Works
 
 1. **Authentication**: The script initializes MSAL with public delegated permissions (`https://graph.microsoft.com/AuditLog.Read.All`) and launches your default browser to complete authentication and MFA.
 2. **Querying Sign-in Logs**: Calculates the cutoff date (UTC) based on the specified timeframe and queries `https://graph.microsoft.com/v1.0/auditLogs/signIns`, traversing `@odata.nextLink` to collect all paginated events.
@@ -38,7 +47,7 @@ A security investigation tool designed for SOC analysts and incident responders 
 
 ---
 
-## 3. Prerequisites & Dependencies
+## Prerequisites & Dependencies
 
 ### Python Environment
 - Python 3.8+ (Standard Python or Anaconda/Miniconda)
@@ -61,7 +70,7 @@ A security investigation tool designed for SOC analysts and incident responders 
 
 ---
 
-## 4. Installation & Configuration
+## Installation Guide
 
 ### Step 1: Install Dependencies
 
@@ -90,7 +99,7 @@ ABUSEIPDB_API_KEYS = [
 # =========================================================================
 ```
 ---
-## 5. Usage & Execution
+## Usage & Execution
 
 ### 1. Default Execution (Last 15 Days, Quiet Progress Mode)
 
@@ -116,7 +125,7 @@ python graph_signins_abuseip.py -u user@company.com -v
 python graph_signins_abuseip.py -u user@company.com -d 30 -v
 ```
 ---
-## 6. Generated Outputs
+## Execution Workflow & Outputs
 
 - Terminal Summary:
 
