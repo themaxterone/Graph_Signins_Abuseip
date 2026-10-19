@@ -77,7 +77,7 @@ pip install msal requests urllib3
 
 ### Step 2: Configure AbuseIPDB API Keys
 
-Open graph_signins_abuseip.py in a text editor and paste your API key(s) into the ABUSEIPDB_API_KEYS list:
+- Open graph_signins_abuseip.py in a text editor and paste your API key(s) into the ABUSEIPDB_API_KEYS list:
 
 ```
 # =========================================================================
@@ -89,7 +89,7 @@ ABUSEIPDB_API_KEYS = [
 ]
 # =========================================================================
 ```
-
+---
 ## 5. Usage & Execution
 
 ### 1. Default Execution (Last 15 Days, Quiet Progress Mode)
@@ -100,7 +100,7 @@ python graph_signins_abuseip.py -u user@company.com
 
 ### 2. Custom Time Window (-d)
 
-Specify the number of past days to query (e.g., last 7 days or 30 days):
+- Specify the number of past days to query (e.g., last 7 days or 30 days):
 
 ```
 python graph_signins_abuseip.py -u user@company.com -d 7
@@ -109,16 +109,16 @@ python graph_signins_abuseip.py -u user@company.com -d 30
 
 ### 3. Verbose Mode (-v)
 
-Outputs detailed metadata for every single sign-in event directly to the console:
+- Outputs detailed metadata for every single sign-in event directly to the console:
 
 ```
 python graph_signins_abuseip.py -u user@company.com -v
 python graph_signins_abuseip.py -u user@company.com -d 30 -v
 ```
-
+---
 ## 6. Generated Outputs
 
-Terminal Summary:
+- Terminal Summary:
 
 ```
 =====================================================================================
@@ -131,14 +131,14 @@ Terminal Summary:
 =====================================================================================
 ```
 
-CSV Report (signins_intel_<user>_<days>d_<timestamp>.csv): Full tabular event export suitable for Excel or SIEM ingestion.
+- **CSV Report** (signins_intel_<user>_<days>d_<timestamp>.csv): Full tabular event export suitable for Excel or SIEM ingestion.
 
-HTML Dashboard (signins_intel_<user>_<days>d_<timestamp>.html): Standalone interactive report featuring:
+- **HTML Dashboard** (signins_intel_<user>_<days>d_<timestamp>.html): Standalone interactive report featuring:
 
-Summary stat cards (Total Logs, Success, Failures, Malicious IPs, Suspicious IPs).
+- **Summary** stat cards (Total Logs, Success, Failures, Malicious IPs, Suspicious IPs).
 
--- Multi-field live search (filters by IP, app, browser, error reason, or attack type).
+	- Multi-field live search (filters by IP, app, browser, error reason, or attack type).
 
--- Instant filter buttons for authentication status and IP threat levels.
+	- Instant filter buttons for authentication status and IP threat levels.
 
--- Visual risk score bars and attack category badges.
+	- Visual risk score bars and attack category badges.
